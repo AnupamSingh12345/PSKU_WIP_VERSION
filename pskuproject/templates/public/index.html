@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="%PUBLIC_URL%/favicon.ico" rel="shortcut icon" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+    <title>PSKU SIMULATOR</title>
+    <script>
+    function isValidBrowser() {
+      var isChromium = window.chrome;
+      var winNav = window.navigator;
+      var vendorName = winNav.vendor;
+      var isOpera = typeof window.opr !== "undefined";
+      var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+      var isIOSChrome = winNav.userAgent.match("CriOS");
+      if (isIOSChrome) {
+        return true;
+      } else if (
+        isChromium !== null &&
+        typeof isChromium !== "undefined" &&
+        vendorName === "Google Inc." &&
+        isOpera === false &&
+        isIEedge === false
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  </script>
+</script>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+    </div>
+    <div id="google-chrome" style="display: none">
+      <section class="hero">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">Only Google Chrome is supported at this moment :(</h1>
+            <h5>
+              If you do not have Google Chrome installed in your system, you can download it from 
+              <a href="https://www.google.com/chrome/" target="_blank">here</a>.
+            </h5>
+          </div>
+        </div>
+      </section>
+    </div>
+    <input id="username" type="hidden" value="{{username}}" />
+    <input id="userpermissions" type="hidden" value="{{userpermissions}}" />
+    <input id="servertime" type="hidden" value="{{servertime}}" />
+    <script>
+      
+   
+      if (!isValidBrowser()) {
+        console.info("Non Chrome Browser Detected!!!")
+        document.getElementById("root").style.display = "none";
+        document.getElementById("google-chrome").style.display = "block";
+       
+      }
+     
+    </script>
+  </body>
+</html>
