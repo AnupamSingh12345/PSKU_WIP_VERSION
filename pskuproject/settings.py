@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'rb)jp7rx+nbyjsohvfi)de^d^%-r7&(l2xl-cq^%v9&rph51c^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 REACT_TEMPLATE_PATH = os.path.join(BASE_DIR, 'pskuproject', 'templates')
 
